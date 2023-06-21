@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'demos.agile'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+compileTestJava {
+    // To enable argument names in reporting and debugging with jqwik
+    options.compilerArgs += '-parameters'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    testImplementation 'org.quicktheories:quicktheories:0.26'
+    testImplementation "net.jqwik:jqwik:1.6.5"
+}
+
+test {
+    useJUnitPlatform()
+}
