@@ -65,5 +65,9 @@ public class StringCalculatorTest {
         );
     }
 
+    @Test
+    void allowsCustomDelimiters() {
+        assertEquals(5, calculator.add("//:\n2:3"));
+    }
 
 }
